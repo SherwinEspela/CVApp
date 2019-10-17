@@ -16,6 +16,7 @@
 		1E4426AF23581B2000088F99 /* CVAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4426AE23581B2000088F99 /* CVAppTests.swift */; };
 		1E4426BA23581B2000088F99 /* CVAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4426B923581B2000088F99 /* CVAppUITests.swift */; };
 		1E4426CC23583EB300088F99 /* cv_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 1E4426CB23583EB300088F99 /* cv_data.json */; };
+		1E4426D12358534100088F99 /* Reference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4426D02358534100088F99 /* Reference.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		1E4426B923581B2000088F99 /* CVAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVAppUITests.swift; sourceTree = "<group>"; };
 		1E4426BB23581B2000088F99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E4426CB23583EB300088F99 /* cv_data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cv_data.json; sourceTree = "<group>"; };
+		1E4426D02358534100088F99 /* Reference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reference.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				1E4426C723583B4D00088F99 /* View */,
 				1E4426C923583B6800088F99 /* ViewModel */,
 				1E4426CA23583B7500088F99 /* ViewController */,
+				1E4426CD23584A6F00088F99 /* Services */,
 				1E44269723581B1E00088F99 /* AppDelegate.swift */,
 				1E44269923581B1E00088F99 /* SceneDelegate.swift */,
 				1E44269B23581B1E00088F99 /* ViewController.swift */,
@@ -145,6 +148,7 @@
 		1E4426C823583B5700088F99 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1E4426D02358534100088F99 /* Reference.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -161,6 +165,13 @@
 			children = (
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		1E4426CD23584A6F00088F99 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E44269C23581B1E00088F99 /* ViewController.swift in Sources */,
+				1E4426D12358534100088F99 /* Reference.swift in Sources */,
 				1E44269823581B1E00088F99 /* AppDelegate.swift in Sources */,
 				1E44269A23581B1E00088F99 /* SceneDelegate.swift in Sources */,
 			);

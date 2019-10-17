@@ -54,7 +54,7 @@
                     "Work closely with other Product Development teams to improve consistency and timing of releases",
                     "Eager to get nerdy about memory management, UI layout/rendering and UI/network performance"
                 ]
-            },
+            }
         ],
         "education": [
             {
@@ -72,9 +72,9 @@
             "Software Development",
             "Mobile App Development",
             "Web Development",
-            "Game Design and Development"
+            "Game Design and Development",
             "3D modelling",
-            "Graphics Design"
+            "Graphics Design",
             "Xcode"
         ],
         "language": [
