@@ -15,6 +15,7 @@
 		1E4426A423581B1F00088F99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E4426A223581B1F00088F99 /* LaunchScreen.storyboard */; };
 		1E4426AF23581B2000088F99 /* CVAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4426AE23581B2000088F99 /* CVAppTests.swift */; };
 		1E4426BA23581B2000088F99 /* CVAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4426B923581B2000088F99 /* CVAppUITests.swift */; };
+		1E4426CC23583EB300088F99 /* cv_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 1E4426CB23583EB300088F99 /* cv_data.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		1E4426B523581B2000088F99 /* CVAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CVAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E4426B923581B2000088F99 /* CVAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVAppUITests.swift; sourceTree = "<group>"; };
 		1E4426BB23581B2000088F99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E4426CB23583EB300088F99 /* cv_data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cv_data.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,10 @@
 		1E44269623581B1E00088F99 /* CVApp */ = {
 			isa = PBXGroup;
 			children = (
+				1E4426C823583B5700088F99 /* Model */,
+				1E4426C723583B4D00088F99 /* View */,
+				1E4426C923583B6800088F99 /* ViewModel */,
+				1E4426CA23583B7500088F99 /* ViewController */,
 				1E44269723581B1E00088F99 /* AppDelegate.swift */,
 				1E44269923581B1E00088F99 /* SceneDelegate.swift */,
 				1E44269B23581B1E00088F99 /* ViewController.swift */,
@@ -106,6 +112,7 @@
 				1E4426A023581B1F00088F99 /* Assets.xcassets */,
 				1E4426A223581B1F00088F99 /* LaunchScreen.storyboard */,
 				1E4426A523581B1F00088F99 /* Info.plist */,
+				1E4426CB23583EB300088F99 /* cv_data.json */,
 			);
 			path = CVApp;
 			sourceTree = "<group>";
@@ -126,6 +133,34 @@
 				1E4426BB23581B2000088F99 /* Info.plist */,
 			);
 			path = CVAppUITests;
+			sourceTree = "<group>";
+		};
+		1E4426C723583B4D00088F99 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1E4426C823583B5700088F99 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1E4426C923583B6800088F99 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1E4426CA23583B7500088F99 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +269,7 @@
 			files = (
 				1E4426A423581B1F00088F99 /* LaunchScreen.storyboard in Resources */,
 				1E4426A123581B1F00088F99 /* Assets.xcassets in Resources */,
+				1E4426CC23583EB300088F99 /* cv_data.json in Resources */,
 				1E44269F23581B1E00088F99 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
