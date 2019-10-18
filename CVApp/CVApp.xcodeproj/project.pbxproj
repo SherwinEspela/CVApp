@@ -17,6 +17,10 @@
 		1E4426BA23581B2000088F99 /* CVAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4426B923581B2000088F99 /* CVAppUITests.swift */; };
 		1E4426CC23583EB300088F99 /* cv_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 1E4426CB23583EB300088F99 /* cv_data.json */; };
 		1E4426D12358534100088F99 /* Reference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4426D02358534100088F99 /* Reference.swift */; };
+		1E4426D32358554100088F99 /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = 1E4426D22358554100088F99 /* test.json */; };
+		1E4426D523595DC900088F99 /* Education.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4426D423595DC900088F99 /* Education.swift */; };
+		1E4426D723595E3F00088F99 /* Experience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4426D623595E3F00088F99 /* Experience.swift */; };
+		1E4426D923595EC800088F99 /* cv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4426D823595EC800088F99 /* cv.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,10 @@
 		1E4426BB23581B2000088F99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E4426CB23583EB300088F99 /* cv_data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cv_data.json; sourceTree = "<group>"; };
 		1E4426D02358534100088F99 /* Reference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reference.swift; sourceTree = "<group>"; };
+		1E4426D22358554100088F99 /* test.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; };
+		1E4426D423595DC900088F99 /* Education.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Education.swift; sourceTree = "<group>"; };
+		1E4426D623595E3F00088F99 /* Experience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experience.swift; sourceTree = "<group>"; };
+		1E4426D823595EC800088F99 /* cv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cv.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +124,7 @@
 				1E4426A223581B1F00088F99 /* LaunchScreen.storyboard */,
 				1E4426A523581B1F00088F99 /* Info.plist */,
 				1E4426CB23583EB300088F99 /* cv_data.json */,
+				1E4426D22358554100088F99 /* test.json */,
 			);
 			path = CVApp;
 			sourceTree = "<group>";
@@ -149,6 +158,9 @@
 			isa = PBXGroup;
 			children = (
 				1E4426D02358534100088F99 /* Reference.swift */,
+				1E4426D423595DC900088F99 /* Education.swift */,
+				1E4426D623595E3F00088F99 /* Experience.swift */,
+				1E4426D823595EC800088F99 /* cv.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -280,6 +292,7 @@
 			files = (
 				1E4426A423581B1F00088F99 /* LaunchScreen.storyboard in Resources */,
 				1E4426A123581B1F00088F99 /* Assets.xcassets in Resources */,
+				1E4426D32358554100088F99 /* test.json in Resources */,
 				1E4426CC23583EB300088F99 /* cv_data.json in Resources */,
 				1E44269F23581B1E00088F99 /* Main.storyboard in Resources */,
 			);
@@ -308,7 +321,10 @@
 			files = (
 				1E44269C23581B1E00088F99 /* ViewController.swift in Sources */,
 				1E4426D12358534100088F99 /* Reference.swift in Sources */,
+				1E4426D523595DC900088F99 /* Education.swift in Sources */,
+				1E4426D723595E3F00088F99 /* Experience.swift in Sources */,
 				1E44269823581B1E00088F99 /* AppDelegate.swift in Sources */,
+				1E4426D923595EC800088F99 /* cv.swift in Sources */,
 				1E44269A23581B1E00088F99 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
