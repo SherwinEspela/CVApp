@@ -22,15 +22,34 @@ class MainViewController: UIViewController {
     @IBOutlet var labelAddress: UILabel!
     @IBOutlet var labelPhoneNumber: UILabel!
     
+    var mainVM: MainViewModel?
+    
+    var cvHeaders: [String]? {
+        didSet {
+            DispatchQueue.main.async {
+                self.cvSummarytableView.reloadData()
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        fetchCVData()
     }
     
     private func setupUI() {
         cvSummarytableView.delegate = self
         cvSummarytableView.dataSource = self
         setupConstraints()
+    }
+    
+    private func fetchCVData() {
+        mainVM = MainViewModel()
+        mainVM?.getCVHeaders(with: { (cvHeaders, error) in
+            if let _ = error { return }
+            self.cvHeaders = cvHeaders
+        })
     }
     
     private func setupConstraints() {
@@ -74,26 +93,6 @@ class MainViewController: UIViewController {
         ])
     }
     
-    private func parseJson() {
-        guard let path = Bundle.main.path(forResource: "cv_data", ofType: "json") else { return }
-        let url = URL(fileURLWithPath: path)
-    
-        do {
-            let data = try Data(contentsOf: url, options: .mappedIfSafe)
-            let cv = try JSONDecoder().decode(CV.self, from: data)
-            
-            if let exp = cv.experience {
-                exp.forEach {
-                    print($0.companyName!)
-                    print($0.position!)
-                }
-            }
-        
-        } catch {
-            fatalError("failed to parse json data")
-        }
-    }
-    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -113,12 +112,15 @@ extension MainViewController: UITableViewDelegate {
 extension MainViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return cvHeaders?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = "TEST"
+        if let header = cvHeaders?[indexPath.row] {
+            cell.textLabel?.text = header
+        }
+        
         return cell
     }
 }

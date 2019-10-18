@@ -14,10 +14,10 @@ struct CV: Decodable {
         let phone: String?
         let summary: String?
     }
-    
     let experience: [Experience]?
     let education: [Education]?
     let skills: [String]?
     let language: [String]?
     let references: [Reference]?
+    let headers: [String]?
 }

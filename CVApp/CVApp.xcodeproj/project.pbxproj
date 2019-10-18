@@ -21,6 +21,8 @@
 		1E4426D723595E3F00088F99 /* Experience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4426D623595E3F00088F99 /* Experience.swift */; };
 		1E4426D923595EC800088F99 /* cv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4426D823595EC800088F99 /* cv.swift */; };
 		1E4426DB23596A8700088F99 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4426DA23596A8700088F99 /* MainViewController.swift */; };
+		1E4426DD235986DA00088F99 /* CVDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4426DC235986DA00088F99 /* CVDataParser.swift */; };
+		1E4426DF2359882300088F99 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4426DE2359882300088F99 /* MainViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		1E4426D623595E3F00088F99 /* Experience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experience.swift; sourceTree = "<group>"; };
 		1E4426D823595EC800088F99 /* cv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cv.swift; sourceTree = "<group>"; };
 		1E4426DA23596A8700088F99 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		1E4426DC235986DA00088F99 /* CVDataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVDataParser.swift; sourceTree = "<group>"; };
+		1E4426DE2359882300088F99 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +120,7 @@
 				1E4426C923583B6800088F99 /* ViewModel */,
 				1E4426CA23583B7500088F99 /* ViewController */,
 				1E4426CD23584A6F00088F99 /* Services */,
+				1E4426E023598DBA00088F99 /* Constants */,
 				1E44269723581B1E00088F99 /* AppDelegate.swift */,
 				1E44269923581B1E00088F99 /* SceneDelegate.swift */,
 				1E4426A023581B1F00088F99 /* Assets.xcassets */,
@@ -167,6 +172,7 @@
 		1E4426C923583B6800088F99 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				1E4426DE2359882300088F99 /* MainViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -182,8 +188,16 @@
 		1E4426CD23584A6F00088F99 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				1E4426DC235986DA00088F99 /* CVDataParser.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		1E4426E023598DBA00088F99 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,8 +338,10 @@
 				1E4426D723595E3F00088F99 /* Experience.swift in Sources */,
 				1E44269823581B1E00088F99 /* AppDelegate.swift in Sources */,
 				1E4426D923595EC800088F99 /* cv.swift in Sources */,
+				1E4426DD235986DA00088F99 /* CVDataParser.swift in Sources */,
 				1E44269A23581B1E00088F99 /* SceneDelegate.swift in Sources */,
 				1E4426DB23596A8700088F99 /* MainViewController.swift in Sources */,
+				1E4426DF2359882300088F99 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

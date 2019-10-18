@@ -1,4 +1,11 @@
 {
+    "headers": [
+        "Experience",
+        "Education",
+        "Skills",
+        "Language",
+        "References"
+    ],
     "basicInformation": {
         "name": "Jerry Alvarez",
         "address": "94391 Karianne Passage Detroit MI",
