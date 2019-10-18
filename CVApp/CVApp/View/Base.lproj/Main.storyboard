@@ -65,7 +65,7 @@
                         <outlet property="labelName" destination="BvE-Bv-To3" id="frN-e6-CTR"/>
                         <outlet property="labelPhoneNumber" destination="tTX-8z-2qe" id="87w-vj-Njk"/>
                         <outlet property="profileImageView" destination="YZc-wi-Toj" id="IRp-ya-99r"/>
-                        <segue destination="Sc7-Zi-XL9" kind="show" id="G9Q-WJ-tbb"/>
+                        <segue destination="Sc7-Zi-XL9" kind="show" identifier="segueToDetailsVC" id="G9Q-WJ-tbb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

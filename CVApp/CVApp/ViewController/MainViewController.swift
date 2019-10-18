@@ -10,6 +10,7 @@ import UIKit
 
 struct MainViewControllerConstants {
     static let basicInfoViewHeight: CGFloat = 160
+    static let segueIdentifier = "segueToDetailsVC"
 }
 
 class MainViewController: UIViewController {
@@ -23,11 +24,12 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setupUI()
     }
     
     private func setupUI() {
+        cvSummarytableView.delegate = self
+        cvSummarytableView.dataSource = self
         setupConstraints()
     }
     
@@ -88,11 +90,10 @@ class MainViewController: UIViewController {
             }
         
         } catch {
-            //
+            fatalError("failed to parse json data")
         }
     }
     
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -100,6 +101,24 @@ class MainViewController: UIViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
+}
 
+extension MainViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: MainViewControllerConstants.segueIdentifier, sender: nil)
+    }
+}
+
+extension MainViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        cell.textLabel?.text = "TEST"
+        return cell
+    }
 }
