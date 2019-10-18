@@ -9,9 +9,13 @@ import UIKit
 
 class ReferenceCell: UITableViewCell {
 
+    @IBOutlet var nameAndPositionLabel: UILabel!
+    @IBOutlet var companyLabel: UILabel!
+    @IBOutlet var phoneLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        setupUIConstraints()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -20,4 +24,15 @@ class ReferenceCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    private func setupUIConstraints() {
+        nameAndPositionLabel.translatesAutoresizingMaskIntoConstraints = false
+        companyLabel.translatesAutoresizingMaskIntoConstraints = false
+        phoneLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            nameAndPositionLabel.topAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.topAnchor),
+            nameAndPositionLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 20),
+            nameAndPositionLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -20),
+        ])
+    }
 }

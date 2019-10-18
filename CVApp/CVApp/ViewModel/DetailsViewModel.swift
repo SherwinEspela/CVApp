@@ -20,7 +20,7 @@ class DetailsViewModel {
     var cv: CV?
     
     func getNumberOfSection(with pageTitle: String) -> Int? {
-        switch title {
+        switch pageTitle {
         case CVHeaderType.experience.rawValue:
             return cv?.experience?.count
         case CVHeaderType.education.rawValue:

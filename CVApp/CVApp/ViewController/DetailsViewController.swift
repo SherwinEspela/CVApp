@@ -16,6 +16,7 @@ class DetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        registerCells()
         tableView.dataSource = self
     }
     
@@ -29,6 +30,10 @@ class DetailsViewController: UIViewController {
             tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
         ])
     }
+    
+    private func registerCells() {
+        tableView.register(UINib(nibName: "ReferenceCell", bundle: nil), forCellReuseIdentifier: "referenceCell")
+    }
 }
 
 extension DetailsViewController: UITableViewDataSource {
@@ -39,25 +44,34 @@ extension DetailsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = getCellType(with: self.navigationItem.title!)
-        if let title = detailsVM.cv?.language?[indexPath.row] {
-            cell.textLabel?.text = title
-        }
+        let cell = getCellType(with: self.navigationItem.title!, at: indexPath)
         return cell
     }
     
-    private func getCellType(with pageTitle: String) -> UITableViewCell {
+    private func getCellType(with pageTitle: String, at indexPath: IndexPath) -> UITableViewCell {
         switch pageTitle {
         case CVHeaderType.experience.rawValue:
             return UITableViewCell()
         case CVHeaderType.education.rawValue:
             return UITableViewCell()
         case CVHeaderType.language.rawValue:
-            return UITableViewCell()
+            guard let language = detailsVM.cv?.language?[indexPath.row] else { fatalError() }
+            let cell = UITableViewCell()
+            cell.textLabel?.text = language
+            return cell
         case CVHeaderType.references.rawValue:
-            return UITableViewCell()
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "referenceCell") as? ReferenceCell, let reference = detailsVM.cv?.references?[indexPath.row] else {
+                fatalError()
+            }
+            cell.nameAndPositionLabel.text = "\(String(describing: reference.name)) ( \(String(describing: reference.position)) )"
+            cell.companyLabel.text = reference.company
+            cell.phoneLabel.text = reference.phone
+            return cell
         case CVHeaderType.skills.rawValue:
-            return UITableViewCell()
+            guard let skill = detailsVM.cv?.skills?[indexPath.row] else { fatalError() }
+            let cell = UITableViewCell()
+            cell.textLabel?.text = skill
+            return cell
         default:
             return UITableViewCell()
         }
