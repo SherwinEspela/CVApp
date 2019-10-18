@@ -2,8 +2,7 @@
 //  MainViewController.swift
 //  CVApp
 //
-//  Created by Sherwin Espela on 2019-10-17.
-//  Copyright © 2019 cybermash. All rights reserved.
+//  Created by Sherwin Espela on 2019-10-17
 //
 
 import UIKit
@@ -94,14 +93,15 @@ class MainViewController: UIViewController {
     }
     
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        guard let index = cvSummarytableView.indexPathForSelectedRow?.row else { return }
+        if let detailsVC = segue.destination as? DetailsViewController, let title = cvHeaders?[index] {
+            detailsVC.navigationItem.title = title
+        }
     }
 }
 
+// MARK: - UITableViewDelegate methods
 extension MainViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -109,6 +109,7 @@ extension MainViewController: UITableViewDelegate {
     }
 }
 
+// MARK: - UITableViewDataSource methods
 extension MainViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -23,6 +23,7 @@
 		1E4426DB23596A8700088F99 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4426DA23596A8700088F99 /* MainViewController.swift */; };
 		1E4426DD235986DA00088F99 /* CVDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4426DC235986DA00088F99 /* CVDataParser.swift */; };
 		1E4426DF2359882300088F99 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4426DE2359882300088F99 /* MainViewModel.swift */; };
+		1E4426E4235997B900088F99 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4426E3235997B900088F99 /* DetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		1E4426DA23596A8700088F99 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		1E4426DC235986DA00088F99 /* CVDataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVDataParser.swift; sourceTree = "<group>"; };
 		1E4426DE2359882300088F99 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		1E4426E3235997B900088F99 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				1E4426DA23596A8700088F99 /* MainViewController.swift */,
+				1E4426E3235997B900088F99 /* DetailsViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				1E44269A23581B1E00088F99 /* SceneDelegate.swift in Sources */,
 				1E4426DB23596A8700088F99 /* MainViewController.swift in Sources */,
 				1E4426DF2359882300088F99 /* MainViewModel.swift in Sources */,
+				1E4426E4235997B900088F99 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
