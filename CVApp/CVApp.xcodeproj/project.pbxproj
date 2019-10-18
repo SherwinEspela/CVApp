@@ -24,6 +24,9 @@
 		1E4426DD235986DA00088F99 /* CVDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4426DC235986DA00088F99 /* CVDataParser.swift */; };
 		1E4426DF2359882300088F99 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4426DE2359882300088F99 /* MainViewModel.swift */; };
 		1E4426E4235997B900088F99 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4426E3235997B900088F99 /* DetailsViewController.swift */; };
+		1E4426E623599AF800088F99 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4426E523599AF800088F99 /* DetailsViewModel.swift */; };
+		1E4426E9235A1CC800088F99 /* ReferenceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4426E7235A1CC800088F99 /* ReferenceCell.swift */; };
+		1E4426EA235A1CC800088F99 /* ReferenceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E4426E8235A1CC800088F99 /* ReferenceCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +70,9 @@
 		1E4426DC235986DA00088F99 /* CVDataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVDataParser.swift; sourceTree = "<group>"; };
 		1E4426DE2359882300088F99 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		1E4426E3235997B900088F99 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		1E4426E523599AF800088F99 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
+		1E4426E7235A1CC800088F99 /* ReferenceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceCell.swift; sourceTree = "<group>"; };
+		1E4426E8235A1CC800088F99 /* ReferenceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReferenceCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				1E44269D23581B1E00088F99 /* Main.storyboard */,
+				1E4426EB235A1CD000088F99 /* CustomCells */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -175,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				1E4426DE2359882300088F99 /* MainViewModel.swift */,
+				1E4426E523599AF800088F99 /* DetailsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -201,6 +209,15 @@
 			children = (
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		1E4426EB235A1CD000088F99 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				1E4426E7235A1CC800088F99 /* ReferenceCell.swift */,
+				1E4426E8235A1CC800088F99 /* ReferenceCell.xib */,
+			);
+			path = CustomCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,6 +329,7 @@
 				1E4426D32358554100088F99 /* test.json in Resources */,
 				1E4426CC23583EB300088F99 /* cv_data.json in Resources */,
 				1E44269F23581B1E00088F99 /* Main.storyboard in Resources */,
+				1E4426EA235A1CC800088F99 /* ReferenceCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,12 +355,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E4426D12358534100088F99 /* Reference.swift in Sources */,
+				1E4426E9235A1CC800088F99 /* ReferenceCell.swift in Sources */,
 				1E4426D523595DC900088F99 /* Education.swift in Sources */,
 				1E4426D723595E3F00088F99 /* Experience.swift in Sources */,
 				1E44269823581B1E00088F99 /* AppDelegate.swift in Sources */,
 				1E4426D923595EC800088F99 /* cv.swift in Sources */,
 				1E4426DD235986DA00088F99 /* CVDataParser.swift in Sources */,
 				1E44269A23581B1E00088F99 /* SceneDelegate.swift in Sources */,
+				1E4426E623599AF800088F99 /* DetailsViewModel.swift in Sources */,
 				1E4426DB23596A8700088F99 /* MainViewController.swift in Sources */,
 				1E4426DF2359882300088F99 /* MainViewModel.swift in Sources */,
 				1E4426E4235997B900088F99 /* DetailsViewController.swift in Sources */,

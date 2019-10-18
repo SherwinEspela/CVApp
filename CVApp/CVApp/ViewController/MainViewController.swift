@@ -54,6 +54,7 @@ class MainViewController: UIViewController {
     private func setupConstraints() {
         basicInfoView.translatesAutoresizingMaskIntoConstraints = false
         profileImageView.translatesAutoresizingMaskIntoConstraints = false
+        cvSummarytableView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             // for basicInfoView
@@ -97,6 +98,7 @@ class MainViewController: UIViewController {
         guard let index = cvSummarytableView.indexPathForSelectedRow?.row else { return }
         if let detailsVC = segue.destination as? DetailsViewController, let title = cvHeaders?[index] {
             detailsVC.navigationItem.title = title
+            detailsVC.detailsVM.cv = mainVM?.cv
         }
     }
 }
