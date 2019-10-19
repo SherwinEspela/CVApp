@@ -27,6 +27,8 @@
 		1E4426E623599AF800088F99 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4426E523599AF800088F99 /* DetailsViewModel.swift */; };
 		1E4426E9235A1CC800088F99 /* ReferenceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4426E7235A1CC800088F99 /* ReferenceCell.swift */; };
 		1E4426EA235A1CC800088F99 /* ReferenceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E4426E8235A1CC800088F99 /* ReferenceCell.xib */; };
+		1E4426FB235BD31D00088F99 /* EducationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4426F9235BD31C00088F99 /* EducationCell.swift */; };
+		1E4426FC235BD31D00088F99 /* EducationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E4426FA235BD31C00088F99 /* EducationCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		1E4426E523599AF800088F99 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		1E4426E7235A1CC800088F99 /* ReferenceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceCell.swift; sourceTree = "<group>"; };
 		1E4426E8235A1CC800088F99 /* ReferenceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReferenceCell.xib; sourceTree = "<group>"; };
+		1E4426F9235BD31C00088F99 /* EducationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationCell.swift; sourceTree = "<group>"; };
+		1E4426FA235BD31C00088F99 /* EducationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EducationCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +220,8 @@
 			children = (
 				1E4426E7235A1CC800088F99 /* ReferenceCell.swift */,
 				1E4426E8235A1CC800088F99 /* ReferenceCell.xib */,
+				1E4426F9235BD31C00088F99 /* EducationCell.swift */,
+				1E4426FA235BD31C00088F99 /* EducationCell.xib */,
 			);
 			path = CustomCells;
 			sourceTree = "<group>";
@@ -288,6 +294,7 @@
 				TargetAttributes = {
 					1E44269323581B1E00088F99 = {
 						CreatedOnToolsVersion = 11.1;
+						LastSwiftMigration = 1110;
 					};
 					1E4426A923581B2000088F99 = {
 						CreatedOnToolsVersion = 11.1;
@@ -329,6 +336,7 @@
 				1E4426D32358554100088F99 /* test.json in Resources */,
 				1E4426CC23583EB300088F99 /* cv_data.json in Resources */,
 				1E44269F23581B1E00088F99 /* Main.storyboard in Resources */,
+				1E4426FC235BD31D00088F99 /* EducationCell.xib in Resources */,
 				1E4426EA235A1CC800088F99 /* ReferenceCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,6 +365,7 @@
 				1E4426D12358534100088F99 /* Reference.swift in Sources */,
 				1E4426E9235A1CC800088F99 /* ReferenceCell.swift in Sources */,
 				1E4426D523595DC900088F99 /* Education.swift in Sources */,
+				1E4426FB235BD31D00088F99 /* EducationCell.swift in Sources */,
 				1E4426D723595E3F00088F99 /* Experience.swift in Sources */,
 				1E44269823581B1E00088F99 /* AppDelegate.swift in Sources */,
 				1E4426D923595EC800088F99 /* cv.swift in Sources */,

@@ -15,7 +15,11 @@ class DetailsViewController: UIViewController {
     var cvHeaderType: CVHeaderType = .education
     
     var referenceCell: ReferenceCell? {
-        return tableView.dequeueReusableCell(withIdentifier: "referenceCell") as? ReferenceCell
+        return tableView.dequeueReusableCell(withIdentifier: ReferenceCell.cellIdentifier) as? ReferenceCell
+    }
+    
+    var educationCell: EducationCell? {
+        return tableView.dequeueReusableCell(withIdentifier: EducationCell.cellIdentifier) as? EducationCell
     }
     
     override func viewDidLoad() {
@@ -38,7 +42,8 @@ class DetailsViewController: UIViewController {
     }
     
     private func registerCells() {
-        tableView.register(UINib(nibName: "ReferenceCell", bundle: nil), forCellReuseIdentifier: "referenceCell")
+        tableView.register(UINib(nibName: "ReferenceCell", bundle: nil), forCellReuseIdentifier: ReferenceCell.cellIdentifier)
+        tableView.register(UINib(nibName: "EducationCell", bundle: nil), forCellReuseIdentifier: EducationCell.cellIdentifier)
     }
 }
 
@@ -65,15 +70,20 @@ extension DetailsViewController: UITableViewDataSource {
         case CVHeaderType.experience.rawValue:
             return UITableViewCell()
         case CVHeaderType.education.rawValue:
-            return UITableViewCell()
+            guard let cell = educationCell, let education = detailsVM.cv?.education?[indexPath.row] else {
+                fatalError()
+            }
+            cell.degreeLabel.text = education.degree
+            cell.schoolLabel.text = education.school
+            cell.yearGraduatedLabel.text = education.yearGraduated
+            return cell
         case CVHeaderType.language.rawValue:
             guard let language = detailsVM.cv?.language?[indexPath.row] else { fatalError() }
             let cell = UITableViewCell()
             cell.textLabel?.text = language
             return cell
         case CVHeaderType.references.rawValue:
-            guard let cell = referenceCell, let reference = detailsVM.cv?.references?[indexPath.row],
-                let name = reference.name, let position = reference.position else {
+            guard let cell = referenceCell, let reference = detailsVM.cv?.references?[indexPath.row] else {
                 fatalError()
             }
             cell.nameLabel.text = reference.name
@@ -96,7 +106,8 @@ extension DetailsViewController: UITableViewDataSource {
         case CVHeaderType.experience.rawValue:
             return 50
         case CVHeaderType.education.rawValue:
-            return 50
+            guard let cell = educationCell else { return 0 }
+            return cell.frame.height
         case CVHeaderType.references.rawValue:
             guard let cell = referenceCell else { return 0 }
             return cell.frame.height

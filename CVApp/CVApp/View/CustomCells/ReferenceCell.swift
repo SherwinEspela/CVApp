@@ -14,6 +14,8 @@ class ReferenceCell: UITableViewCell {
     @IBOutlet var companyLabel: UILabel!
     @IBOutlet var phoneLabel: UILabel!
     
+    static let cellIdentifier = "referenceCell"
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
