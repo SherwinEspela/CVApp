@@ -64,6 +64,11 @@
     ],
     "education": [
         {
+            "school": "Harvard University",
+            "degree": "MS in Machine Learning",
+            "yearGraduated": "2008"
+        },
+        {
             "school": "Stanford University",
             "degree": "MS in Computer Programming",
             "yearGraduated": "2007"
@@ -72,6 +77,11 @@
             "school": "University of British Columbia",
             "degree": "Bachelor’s Degree in Computer Science",
             "yearGraduated": "2005"
+        },
+        {
+            "school": "British Columbia Institute of Technology",
+            "degree": "Bachelor’s Degree in Computer Science",
+            "yearGraduated": "2002"
         }
     ],
     "skills": [

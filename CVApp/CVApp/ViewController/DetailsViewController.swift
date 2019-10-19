@@ -76,7 +76,8 @@ extension DetailsViewController: UITableViewDataSource {
                 let name = reference.name, let position = reference.position else {
                 fatalError()
             }
-            cell.nameAndPositionLabel.text = "\(name) ( \(position) )"
+            cell.nameLabel.text = reference.name
+            cell.positionLabel.text = reference.position
             cell.companyLabel.text = reference.company
             cell.phoneLabel.text = reference.phone
             return cell
@@ -97,9 +98,7 @@ extension DetailsViewController: UITableViewDataSource {
         case CVHeaderType.education.rawValue:
             return 50
         case CVHeaderType.references.rawValue:
-            guard let cell = referenceCell else {
-                return 0
-            }
+            guard let cell = referenceCell else { return 0 }
             return cell.frame.height
         default:
             return 50
