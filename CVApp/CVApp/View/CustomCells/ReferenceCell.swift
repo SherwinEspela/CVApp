@@ -15,13 +15,14 @@ class ReferenceCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        setupUI()
         setupUIConstraints()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    private func setupUI() {
+        nameAndPositionLabel.font = UIFont.boldSystemFont(ofSize: 16.0)
+        companyLabel.font = UIFont.systemFont(ofSize: 12)
+        phoneLabel.font = UIFont.systemFont(ofSize: 12)
     }
     
     private func setupUIConstraints() {
@@ -30,9 +31,17 @@ class ReferenceCell: UITableViewCell {
         phoneLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            nameAndPositionLabel.topAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.topAnchor),
+            nameAndPositionLabel.topAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.topAnchor, constant: 10),
             nameAndPositionLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 20),
             nameAndPositionLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -20),
+            
+            companyLabel.topAnchor.constraint(equalTo: nameAndPositionLabel.bottomAnchor, constant: 6),
+            companyLabel.leadingAnchor.constraint(equalTo: nameAndPositionLabel.leadingAnchor),
+            companyLabel.trailingAnchor.constraint(equalTo: nameAndPositionLabel.trailingAnchor),
+            
+            phoneLabel.topAnchor.constraint(equalTo: companyLabel.bottomAnchor, constant: 3),
+            phoneLabel.leadingAnchor.constraint(equalTo: nameAndPositionLabel.leadingAnchor),
+            phoneLabel.trailingAnchor.constraint(equalTo: nameAndPositionLabel.trailingAnchor)
         ])
     }
 }

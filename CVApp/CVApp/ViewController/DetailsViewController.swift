@@ -14,10 +14,16 @@ class DetailsViewController: UIViewController {
     let detailsVM = DetailsViewModel()
     var cvHeaderType: CVHeaderType = .education
     
+    var referenceCell: ReferenceCell? {
+        return tableView.dequeueReusableCell(withIdentifier: "referenceCell") as? ReferenceCell
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCells()
         tableView.dataSource = self
+        tableView.delegate = self
+        tableView.allowsSelection = false
     }
     
     private func setupConstraint() {
@@ -33,6 +39,12 @@ class DetailsViewController: UIViewController {
     
     private func registerCells() {
         tableView.register(UINib(nibName: "ReferenceCell", bundle: nil), forCellReuseIdentifier: "referenceCell")
+    }
+}
+
+extension DetailsViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return getCellHeight(with: self.navigationItem.title!)
     }
 }
 
@@ -60,10 +72,11 @@ extension DetailsViewController: UITableViewDataSource {
             cell.textLabel?.text = language
             return cell
         case CVHeaderType.references.rawValue:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "referenceCell") as? ReferenceCell, let reference = detailsVM.cv?.references?[indexPath.row] else {
+            guard let cell = referenceCell, let reference = detailsVM.cv?.references?[indexPath.row],
+                let name = reference.name, let position = reference.position else {
                 fatalError()
             }
-            cell.nameAndPositionLabel.text = "\(String(describing: reference.name)) ( \(String(describing: reference.position)) )"
+            cell.nameAndPositionLabel.text = "\(name) ( \(position) )"
             cell.companyLabel.text = reference.company
             cell.phoneLabel.text = reference.phone
             return cell
@@ -74,6 +87,22 @@ extension DetailsViewController: UITableViewDataSource {
             return cell
         default:
             return UITableViewCell()
+        }
+    }
+    
+    private func getCellHeight(with pageTitle: String) -> CGFloat {
+        switch pageTitle {
+        case CVHeaderType.experience.rawValue:
+            return 50
+        case CVHeaderType.education.rawValue:
+            return 50
+        case CVHeaderType.references.rawValue:
+            guard let cell = referenceCell else {
+                return 0
+            }
+            return cell.frame.height
+        default:
+            return 50
         }
     }
 }

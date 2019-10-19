@@ -45,6 +45,9 @@ class MainViewController: UIViewController {
     
     private func fetchCVData() {
         mainVM = MainViewModel()
+        
+        
+        
         mainVM?.getCVHeaders(with: { (cvHeaders, error) in
             if let _ = error { return }
             self.cvHeaders = cvHeaders
