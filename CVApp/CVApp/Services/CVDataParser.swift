@@ -3,7 +3,6 @@
 //  CVApp
 //
 //  Created by Sherwin Espela on 2019-10-17.
-//  Copyright © 2019 cybermash. All rights reserved.
 //
 
 import Foundation
