@@ -29,6 +29,9 @@
 		1E4426EA235A1CC800088F99 /* ReferenceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E4426E8235A1CC800088F99 /* ReferenceCell.xib */; };
 		1E4426FB235BD31D00088F99 /* EducationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4426F9235BD31C00088F99 /* EducationCell.swift */; };
 		1E4426FC235BD31D00088F99 /* EducationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E4426FA235BD31C00088F99 /* EducationCell.xib */; };
+		1E4426FF235BDB3300088F99 /* ExperienceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4426FD235BDB3300088F99 /* ExperienceCell.swift */; };
+		1E442700235BDB3300088F99 /* ExperienceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E4426FE235BDB3300088F99 /* ExperienceCell.xib */; };
+		1E442702235BE34900088F99 /* StyleLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E442701235BE34900088F99 /* StyleLibrary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +80,9 @@
 		1E4426E8235A1CC800088F99 /* ReferenceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReferenceCell.xib; sourceTree = "<group>"; };
 		1E4426F9235BD31C00088F99 /* EducationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationCell.swift; sourceTree = "<group>"; };
 		1E4426FA235BD31C00088F99 /* EducationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EducationCell.xib; sourceTree = "<group>"; };
+		1E4426FD235BDB3300088F99 /* ExperienceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceCell.swift; sourceTree = "<group>"; };
+		1E4426FE235BDB3300088F99 /* ExperienceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExperienceCell.xib; sourceTree = "<group>"; };
+		1E442701235BE34900088F99 /* StyleLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleLibrary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +217,7 @@
 		1E4426E023598DBA00088F99 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				1E442701235BE34900088F99 /* StyleLibrary.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -222,6 +229,8 @@
 				1E4426E8235A1CC800088F99 /* ReferenceCell.xib */,
 				1E4426F9235BD31C00088F99 /* EducationCell.swift */,
 				1E4426FA235BD31C00088F99 /* EducationCell.xib */,
+				1E4426FD235BDB3300088F99 /* ExperienceCell.swift */,
+				1E4426FE235BDB3300088F99 /* ExperienceCell.xib */,
 			);
 			path = CustomCells;
 			sourceTree = "<group>";
@@ -334,6 +343,7 @@
 				1E4426A423581B1F00088F99 /* LaunchScreen.storyboard in Resources */,
 				1E4426A123581B1F00088F99 /* Assets.xcassets in Resources */,
 				1E4426D32358554100088F99 /* test.json in Resources */,
+				1E442700235BDB3300088F99 /* ExperienceCell.xib in Resources */,
 				1E4426CC23583EB300088F99 /* cv_data.json in Resources */,
 				1E44269F23581B1E00088F99 /* Main.storyboard in Resources */,
 				1E4426FC235BD31D00088F99 /* EducationCell.xib in Resources */,
@@ -368,7 +378,9 @@
 				1E4426FB235BD31D00088F99 /* EducationCell.swift in Sources */,
 				1E4426D723595E3F00088F99 /* Experience.swift in Sources */,
 				1E44269823581B1E00088F99 /* AppDelegate.swift in Sources */,
+				1E442702235BE34900088F99 /* StyleLibrary.swift in Sources */,
 				1E4426D923595EC800088F99 /* cv.swift in Sources */,
+				1E4426FF235BDB3300088F99 /* ExperienceCell.swift in Sources */,
 				1E4426DD235986DA00088F99 /* CVDataParser.swift in Sources */,
 				1E44269A23581B1E00088F99 /* SceneDelegate.swift in Sources */,
 				1E4426E623599AF800088F99 /* DetailsViewModel.swift in Sources */,

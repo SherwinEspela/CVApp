@@ -22,6 +22,10 @@ class DetailsViewController: UIViewController {
         return tableView.dequeueReusableCell(withIdentifier: EducationCell.cellIdentifier) as? EducationCell
     }
     
+    var experienceCell: ExperienceCell? {
+        return tableView.dequeueReusableCell(withIdentifier: ExperienceCell.cellIdentifier) as? ExperienceCell
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCells()
@@ -44,6 +48,7 @@ class DetailsViewController: UIViewController {
     private func registerCells() {
         tableView.register(UINib(nibName: "ReferenceCell", bundle: nil), forCellReuseIdentifier: ReferenceCell.cellIdentifier)
         tableView.register(UINib(nibName: "EducationCell", bundle: nil), forCellReuseIdentifier: EducationCell.cellIdentifier)
+        tableView.register(UINib(nibName: "ExperienceCell", bundle: nil), forCellReuseIdentifier: ExperienceCell.cellIdentifier)
     }
 }
 
@@ -68,7 +73,19 @@ extension DetailsViewController: UITableViewDataSource {
     private func getCellType(with pageTitle: String, at indexPath: IndexPath) -> UITableViewCell {
         switch pageTitle {
         case CVHeaderType.experience.rawValue:
-            return UITableViewCell()
+            guard let cell = experienceCell, let experience = detailsVM.cv?.experience?[indexPath.row], let position = experience.position else {
+                fatalError()
+            }
+            cell.positionLabel.text = position
+            
+            if let companyName = experience.companyName, let location = experience.location {
+                cell.companyNameLabel.text = "\(companyName), \(location)"
+            }
+
+            if let startDate = experience.startDate, let endDate = experience.endDate {
+                cell.dateLabel.text = "Date: \(startDate) to \(endDate)"
+            }
+            return cell
         case CVHeaderType.education.rawValue:
             guard let cell = educationCell, let education = detailsVM.cv?.education?[indexPath.row] else {
                 fatalError()
@@ -104,15 +121,16 @@ extension DetailsViewController: UITableViewDataSource {
     private func getCellHeight(with pageTitle: String) -> CGFloat {
         switch pageTitle {
         case CVHeaderType.experience.rawValue:
-            return 50
+            guard let cell = experienceCell else { return 0 }
+            return cell.intrinsicContentSize.height
         case CVHeaderType.education.rawValue:
             guard let cell = educationCell else { return 0 }
-            return cell.frame.height
+            return cell.intrinsicContentSize.height
         case CVHeaderType.references.rawValue:
             guard let cell = referenceCell else { return 0 }
-            return cell.frame.height
+            return cell.intrinsicContentSize.height
         default:
-            return 50
+            return 44
         }
     }
 }

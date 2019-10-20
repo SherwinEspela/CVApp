@@ -29,22 +29,9 @@ class EducationCell: UITableViewCell {
     }
     
     private func setupUIConstraints() {
-        degreeLabel.translatesAutoresizingMaskIntoConstraints = false
-        schoolLabel.translatesAutoresizingMaskIntoConstraints = false
-        yearGraduatedLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            degreeLabel.topAnchor.constraint(equalTo: self.contentView.safeAreaLayoutGuide.topAnchor, constant: 10),
-            degreeLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 20),
-            degreeLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -20),
-            
-            schoolLabel.topAnchor.constraint(equalTo: degreeLabel.bottomAnchor, constant: 4),
-            schoolLabel.leadingAnchor.constraint(equalTo: degreeLabel.leadingAnchor),
-            schoolLabel.trailingAnchor.constraint(equalTo: degreeLabel.trailingAnchor),
-            
-            yearGraduatedLabel.topAnchor.constraint(equalTo: schoolLabel.bottomAnchor, constant: 4),
-            yearGraduatedLabel.leadingAnchor.constraint(equalTo: degreeLabel.leadingAnchor),
-            yearGraduatedLabel.trailingAnchor.constraint(equalTo: degreeLabel.trailingAnchor),
-        ])
+        StyleLibrary.ConstraintSetup.setConstraint(forTitleLabel: degreeLabel, fromContentView: self.contentView)
+        StyleLibrary.ConstraintSetup.setConstraint(for: schoolLabel, from: degreeLabel)
+        StyleLibrary.ConstraintSetup.setConstraint(for: yearGraduatedLabel, from: schoolLabel)
+        StyleLibrary.ConstraintSetup.setConstraint(forBottomLabel: yearGraduatedLabel, fromContentView: self.contentView)
     }
 }
