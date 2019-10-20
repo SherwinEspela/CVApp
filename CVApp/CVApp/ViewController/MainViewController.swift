@@ -73,10 +73,20 @@ class MainViewController: UIViewController {
         
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             guard let self = self else { return }
-            self.mainVM?.getCVHeaders(with: { (cvHeaders, error) in
-                if let _ = error { return }
-                self.cvHeaders = cvHeaders
-            })
+            guard let path = Bundle.main.path(forResource: "cv_data", ofType: "json") else {
+                return
+            }
+            let url = URL(fileURLWithPath: path)
+            
+            do {
+                let data = try Data(contentsOf: url, options: .mappedIfSafe)
+                self.mainVM?.getCVHeaders(fromJsonData: data, with: { (cvHeaders, error) in
+                    if let _ = error { return }
+                    self.cvHeaders = cvHeaders
+                })
+            } catch {
+                fatalError()
+            }
         }
     }
     

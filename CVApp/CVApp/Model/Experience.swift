@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Experience: Decodable {
+struct Experience: Codable {
     let position: String?
     let companyName: String?
     let location: String?

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Education: Decodable {
+struct Education: Codable {
     let school: String?
     let degree: String?
     let yearGraduated: String?

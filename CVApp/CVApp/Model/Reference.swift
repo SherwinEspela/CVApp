@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Reference: Decodable {
+struct Reference: Codable {
     let name: String?
     let company: String?
     let position: String?

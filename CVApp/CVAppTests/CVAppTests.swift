@@ -18,6 +18,26 @@ class CVAppTests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
+    
+    func test_cvDataIsMissing()
+    {
+        let jsonString = """
+        {
+            "basicInformation": {
+               "name": "Jerry Alvarez",
+               "address": "94391 Karianne Passage Detroit MI",
+               "phone": "+1 (555) 529 5878",
+               "summary": "Skilled and efficient iOS Developer with 3 years of experience creating unique and modern applications available in the App Store."
+            }
+        }
+        """
+        
+        guard let jsonData = jsonString.data(using: .utf8) else {
+            return
+        }
+        
+        let mainVM = MainViewModel()
+    }
 
     func testExample() {
         // This is an example of a functional test case.

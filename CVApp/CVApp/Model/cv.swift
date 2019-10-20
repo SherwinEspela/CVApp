@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CV: Decodable {
+struct CV: Codable {
     let basicInformation: BasicInformation?
     let experience: [Experience]?
     let education: [Education]?
@@ -17,7 +17,7 @@ struct CV: Decodable {
     let headers: [String]?
 }
 
-struct BasicInformation: Decodable {
+struct BasicInformation: Codable {
     let name: String?
     let address: String?
     let phone: String?
