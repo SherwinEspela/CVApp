@@ -71,10 +71,13 @@ class MainViewController: UIViewController {
     private func fetchCVData() {
         mainVM = MainViewModel()
         
-        mainVM?.getCVHeaders(with: { (cvHeaders, error) in
-            if let _ = error { return }
-            self.cvHeaders = cvHeaders
-        })
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            guard let self = self else { return }
+            self.mainVM?.getCVHeaders(with: { (cvHeaders, error) in
+                if let _ = error { return }
+                self.cvHeaders = cvHeaders
+            })
+        }
     }
     
     private func setupUIConstraints() {
