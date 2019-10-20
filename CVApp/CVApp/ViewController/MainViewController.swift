@@ -8,39 +8,52 @@
 import UIKit
 
 struct MainViewControllerConstants {
-    static let basicInfoViewHeight: CGFloat = 160
+    static let basicInfoViewHeight: CGFloat = 200
     static let segueIdentifier = "segueToDetailsVC"
 }
 
 class MainViewController: UIViewController {
 
-    @IBOutlet var cvSummarytableView: UITableView!
+    @IBOutlet var tableView: UITableView!
     @IBOutlet var profileImageView: UIImageView!
     @IBOutlet var basicInfoView: UIView!
-    @IBOutlet var labelName: UILabel!
-    @IBOutlet var labelAddress: UILabel!
-    @IBOutlet var labelPhoneNumber: UILabel!
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var addressLabel: UILabel!
+    @IBOutlet var phoneNumberLabel: UILabel!
+    @IBOutlet var summaryLabel: UILabel!
     
     var mainVM: MainViewModel?
     
     var cvHeaders: [String]? {
         didSet {
             DispatchQueue.main.async {
-                self.cvSummarytableView.reloadData()
+                self.tableView.reloadData()
+                self.nameLabel.text = self.mainVM?.cv?.basicInformation?.name
+                self.addressLabel.text = self.mainVM?.cv?.basicInformation?.address
+                self.phoneNumberLabel.text = self.mainVM?.cv?.basicInformation?.phone
+                self.summaryLabel.text = self.mainVM?.cv?.basicInformation?.summary
             }
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
+        
         setupUI()
+        setupUIConstraints()
         fetchCVData()
     }
     
     private func setupUI() {
-        cvSummarytableView.delegate = self
-        cvSummarytableView.dataSource = self
-        setupConstraints()
+        nameLabel.font = StyleLibrary.FontStyle.header1
+        addressLabel.font = StyleLibrary.FontStyle.header4
+        phoneNumberLabel.font = StyleLibrary.FontStyle.header4
+        summaryLabel.font = StyleLibrary.FontStyle.paragraph
+        
+        addressLabel.numberOfLines = 0
+        summaryLabel.numberOfLines = 0
     }
     
     private func fetchCVData() {
@@ -54,51 +67,53 @@ class MainViewController: UIViewController {
         })
     }
     
-    private func setupConstraints() {
-        basicInfoView.translatesAutoresizingMaskIntoConstraints = false
-        profileImageView.translatesAutoresizingMaskIntoConstraints = false
-        cvSummarytableView.translatesAutoresizingMaskIntoConstraints = false
+    private func setupUIConstraints() {
+        self.view.subviews.forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
+        basicInfoView.subviews.forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
         
         NSLayoutConstraint.activate([
             // for basicInfoView
-            basicInfoView.widthAnchor.constraint(equalToConstant: self.view.frame.width),
             basicInfoView.widthAnchor.constraint(equalTo: self.view.widthAnchor),
-            basicInfoView.heightAnchor.constraint(equalToConstant: MainViewControllerConstants.basicInfoViewHeight),
             basicInfoView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             basicInfoView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
             
             // for profileImageView
-            profileImageView.widthAnchor.constraint(equalToConstant: 110),
-            profileImageView.heightAnchor.constraint(equalToConstant: 110),
-            profileImageView.leadingAnchor.constraint(equalTo: basicInfoView.leadingAnchor, constant: 20),
-            profileImageView.centerYAnchor.constraint(equalTo: basicInfoView.centerYAnchor),
+            profileImageView.topAnchor.constraint(equalTo: basicInfoView.topAnchor, constant: 30),
+            profileImageView.widthAnchor.constraint(equalToConstant: 130),
+            profileImageView.heightAnchor.constraint(equalToConstant: 130),
+            profileImageView.centerXAnchor.constraint(equalTo: basicInfoView.centerXAnchor),
             
-            // for labelName
-            labelName.leadingAnchor.constraint(equalTo: profileImageView.trailingAnchor, constant: 20),
-            labelName.topAnchor.constraint(equalTo: basicInfoView.topAnchor, constant: 20),
-            labelName.trailingAnchor.constraint(equalTo: basicInfoView.trailingAnchor, constant: -20),
-            labelName.heightAnchor.constraint(equalToConstant: 40),
+            // for Name
+            nameLabel.topAnchor.constraint(equalTo: profileImageView.bottomAnchor, constant: 20),
+            nameLabel.leadingAnchor.constraint(equalTo: basicInfoView.leadingAnchor, constant: 20),
+            nameLabel.trailingAnchor.constraint(equalTo: basicInfoView.trailingAnchor, constant: -20),
             
-            // for labelAddress
-            labelAddress.leadingAnchor.constraint(equalTo: labelName.leadingAnchor),
-            labelAddress.trailingAnchor.constraint(equalTo: labelName.trailingAnchor),
-            labelAddress.topAnchor.constraint(equalTo: labelName.bottomAnchor, constant: 20),
+            // for summary
+            summaryLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10),
+            summaryLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
+            summaryLabel.trailingAnchor.constraint(equalTo: nameLabel.trailingAnchor),
             
-            // for labelPhoneNumber
-            labelPhoneNumber.leadingAnchor.constraint(equalTo: labelName.leadingAnchor),
-            labelPhoneNumber.trailingAnchor.constraint(equalTo: labelName.trailingAnchor),
-            labelPhoneNumber.bottomAnchor.constraint(equalTo: basicInfoView.bottomAnchor, constant: 10),
+            // for address
+            addressLabel.topAnchor.constraint(equalTo: summaryLabel.bottomAnchor, constant: 20),
+            addressLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
+            addressLabel.trailingAnchor.constraint(equalTo: nameLabel.trailingAnchor),
+            
+            // for phone
+            phoneNumberLabel.topAnchor.constraint(equalTo: addressLabel.bottomAnchor, constant: 6),
+            phoneNumberLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
+            phoneNumberLabel.trailingAnchor.constraint(equalTo: nameLabel.trailingAnchor),
+            phoneNumberLabel.bottomAnchor.constraint(equalTo: basicInfoView.bottomAnchor, constant: -20),
             
             // for cvSummaryTableView
-            cvSummarytableView.topAnchor.constraint(equalTo: basicInfoView.bottomAnchor),
-            cvSummarytableView.widthAnchor.constraint(equalToConstant: self.view.frame.size.width),
-            cvSummarytableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+            tableView.topAnchor.constraint(equalTo: basicInfoView.bottomAnchor),
+            tableView.widthAnchor.constraint(equalToConstant: self.view.frame.size.width),
+            tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
         ])
     }
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let index = cvSummarytableView.indexPathForSelectedRow?.row else { return }
+        guard let index = tableView.indexPathForSelectedRow?.row else { return }
         if let detailsVC = segue.destination as? DetailsViewController, let title = cvHeaders?[index] {
             detailsVC.navigationItem.title = title
             detailsVC.detailsVM.cv = mainVM?.cv

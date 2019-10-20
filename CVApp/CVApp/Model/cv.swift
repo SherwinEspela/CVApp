@@ -8,16 +8,18 @@
 import Foundation
 
 struct CV: Decodable {
-    struct basicInformation: Decodable {
-        let name: String?
-        let address: String?
-        let phone: String?
-        let summary: String?
-    }
+    let basicInformation: BasicInformation?
     let experience: [Experience]?
     let education: [Education]?
     let skills: [String]?
     let language: [String]?
     let references: [Reference]?
     let headers: [String]?
+}
+
+struct BasicInformation: Decodable {
+    let name: String?
+    let address: String?
+    let phone: String?
+    let summary: String?
 }
