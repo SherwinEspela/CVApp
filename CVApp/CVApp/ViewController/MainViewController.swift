@@ -8,7 +8,7 @@
 import UIKit
 
 struct MainViewControllerConstants {
-    static let basicInfoViewHeight: CGFloat = 200
+    static let profileImageWidth: CGFloat = 130
     static let segueIdentifier = "segueToDetailsVC"
 }
 
@@ -21,6 +21,7 @@ class MainViewController: UIViewController {
     @IBOutlet var addressLabel: UILabel!
     @IBOutlet var phoneNumberLabel: UILabel!
     @IBOutlet var summaryLabel: UILabel!
+    @IBOutlet var artBackgroundView: UIView!
     
     var mainVM: MainViewModel?
     
@@ -32,6 +33,7 @@ class MainViewController: UIViewController {
                 self.addressLabel.text = self.mainVM?.cv?.basicInformation?.address
                 self.phoneNumberLabel.text = self.mainVM?.cv?.basicInformation?.phone
                 self.summaryLabel.text = self.mainVM?.cv?.basicInformation?.summary
+                self.profileImageView.image = UIImage(named: "profilePicture")
             }
         }
     }
@@ -52,14 +54,22 @@ class MainViewController: UIViewController {
         phoneNumberLabel.font = StyleLibrary.FontStyle.header4
         summaryLabel.font = StyleLibrary.FontStyle.paragraph
         
+        nameLabel.textAlignment = .center
+        
         addressLabel.numberOfLines = 0
         summaryLabel.numberOfLines = 0
+    
+        artBackgroundView.backgroundColor = .systemBlue
+        
+        profileImageView.layer.cornerRadius = MainViewControllerConstants.profileImageWidth / 2
+        profileImageView.layer.borderWidth = 3
+        profileImageView.layer.borderColor = UIColor.white.cgColor
+        
+        basicInfoView.backgroundColor = .systemGray5
     }
     
     private func fetchCVData() {
         mainVM = MainViewModel()
-        
-        
         
         mainVM?.getCVHeaders(with: { (cvHeaders, error) in
             if let _ = error { return }
@@ -77,19 +87,24 @@ class MainViewController: UIViewController {
             basicInfoView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             basicInfoView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
             
+            // for art bg
+            artBackgroundView.widthAnchor.constraint(equalTo: basicInfoView.widthAnchor),
+            artBackgroundView.heightAnchor.constraint(equalToConstant: 80),
+            artBackgroundView.topAnchor.constraint(equalTo: basicInfoView.topAnchor),
+            
             // for profileImageView
-            profileImageView.topAnchor.constraint(equalTo: basicInfoView.topAnchor, constant: 30),
-            profileImageView.widthAnchor.constraint(equalToConstant: 130),
-            profileImageView.heightAnchor.constraint(equalToConstant: 130),
+            profileImageView.centerYAnchor.constraint(equalTo: artBackgroundView.bottomAnchor),
+            profileImageView.widthAnchor.constraint(equalToConstant: MainViewControllerConstants.profileImageWidth),
+            profileImageView.heightAnchor.constraint(equalToConstant: MainViewControllerConstants.profileImageWidth),
             profileImageView.centerXAnchor.constraint(equalTo: basicInfoView.centerXAnchor),
             
             // for Name
-            nameLabel.topAnchor.constraint(equalTo: profileImageView.bottomAnchor, constant: 20),
+            nameLabel.topAnchor.constraint(equalTo: profileImageView.bottomAnchor, constant: 6),
             nameLabel.leadingAnchor.constraint(equalTo: basicInfoView.leadingAnchor, constant: 20),
             nameLabel.trailingAnchor.constraint(equalTo: basicInfoView.trailingAnchor, constant: -20),
             
             // for summary
-            summaryLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10),
+            summaryLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 12),
             summaryLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
             summaryLabel.trailingAnchor.constraint(equalTo: nameLabel.trailingAnchor),
             
@@ -99,10 +114,10 @@ class MainViewController: UIViewController {
             addressLabel.trailingAnchor.constraint(equalTo: nameLabel.trailingAnchor),
             
             // for phone
-            phoneNumberLabel.topAnchor.constraint(equalTo: addressLabel.bottomAnchor, constant: 6),
+            phoneNumberLabel.topAnchor.constraint(equalTo: addressLabel.bottomAnchor, constant: 2),
             phoneNumberLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
             phoneNumberLabel.trailingAnchor.constraint(equalTo: nameLabel.trailingAnchor),
-            phoneNumberLabel.bottomAnchor.constraint(equalTo: basicInfoView.bottomAnchor, constant: -20),
+            phoneNumberLabel.bottomAnchor.constraint(equalTo: basicInfoView.bottomAnchor, constant: -10),
             
             // for cvSummaryTableView
             tableView.topAnchor.constraint(equalTo: basicInfoView.bottomAnchor),
