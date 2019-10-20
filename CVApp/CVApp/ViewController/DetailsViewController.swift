@@ -85,6 +85,11 @@ extension DetailsViewController: UITableViewDataSource {
             if let startDate = experience.startDate, let endDate = experience.endDate {
                 cell.dateLabel.text = "Date: \(startDate) to \(endDate)"
             }
+            
+            if let responsibilities = experience.responsibilities {
+                cell.add(responsibilities: responsibilities)
+            }
+            
             return cell
         case CVHeaderType.education.rawValue:
             guard let cell = educationCell, let education = detailsVM.cv?.education?[indexPath.row] else {
