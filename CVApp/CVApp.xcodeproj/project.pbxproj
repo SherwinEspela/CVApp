@@ -32,6 +32,7 @@
 		1E4426FF235BDB3300088F99 /* ExperienceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4426FD235BDB3300088F99 /* ExperienceCell.swift */; };
 		1E442700235BDB3300088F99 /* ExperienceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E4426FE235BDB3300088F99 /* ExperienceCell.xib */; };
 		1E442702235BE34900088F99 /* StyleLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E442701235BE34900088F99 /* StyleLibrary.swift */; };
+		1E442704235C29AD00088F99 /* ConstraintSetupHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E442703235C29AD00088F99 /* ConstraintSetupHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		1E4426FD235BDB3300088F99 /* ExperienceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceCell.swift; sourceTree = "<group>"; };
 		1E4426FE235BDB3300088F99 /* ExperienceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExperienceCell.xib; sourceTree = "<group>"; };
 		1E442701235BE34900088F99 /* StyleLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleLibrary.swift; sourceTree = "<group>"; };
+		1E442703235C29AD00088F99 /* ConstraintSetupHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstraintSetupHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				1E4426DC235986DA00088F99 /* CVDataParser.swift */,
+				1E442703235C29AD00088F99 /* ConstraintSetupHelper.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				1E4426DD235986DA00088F99 /* CVDataParser.swift in Sources */,
 				1E44269A23581B1E00088F99 /* SceneDelegate.swift in Sources */,
 				1E4426E623599AF800088F99 /* DetailsViewModel.swift in Sources */,
+				1E442704235C29AD00088F99 /* ConstraintSetupHelper.swift in Sources */,
 				1E4426DB23596A8700088F99 /* MainViewController.swift in Sources */,
 				1E4426DF2359882300088F99 /* MainViewModel.swift in Sources */,
 				1E4426E4235997B900088F99 /* DetailsViewController.swift in Sources */,

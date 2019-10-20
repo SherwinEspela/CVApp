@@ -29,9 +29,10 @@ class EducationCell: UITableViewCell {
     }
     
     private func setupUIConstraints() {
-        StyleLibrary.ConstraintSetup.setConstraint(forTitleLabel: degreeLabel, fromContentView: self.contentView)
-        StyleLibrary.ConstraintSetup.setConstraint(for: schoolLabel, from: degreeLabel)
-        StyleLibrary.ConstraintSetup.setConstraint(for: yearGraduatedLabel, from: schoolLabel)
-        StyleLibrary.ConstraintSetup.setConstraint(forBottomLabel: yearGraduatedLabel, fromContentView: self.contentView)
+        ConstraintSetupHelper.setConstraint(forTopElement: degreeLabel, withContainerView: self.contentView, topSpacing: StyleLibrary.Spacing.s10)
+        let spacing = SpacingValues(sideSpacing: nil, topSpacing: StyleLibrary.Spacing.s4, bottomSpacing: nil)
+        ConstraintSetupHelper.setConstraint(forElement: schoolLabel, withOtherElement: degreeLabel, spacingValues: spacing)
+        ConstraintSetupHelper.setConstraint(forElement: yearGraduatedLabel, withOtherElement: schoolLabel, spacingValues: spacing)
+        ConstraintSetupHelper.setConstraint(forElement: yearGraduatedLabel, withOtherElement: self.contentView, spacingValues: SpacingValues(sideSpacing: StyleLibrary.Spacing.s20, topSpacing: nil, bottomSpacing: StyleLibrary.Spacing.s10))
     }
 }

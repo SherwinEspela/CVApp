@@ -30,11 +30,12 @@ class ExperienceCell: UITableViewCell {
     }
     
     private func setupUIConstraints() {
-        StyleLibrary.ConstraintSetup.setConstraint(forTitleLabel: positionLabel, fromContentView: self.contentView)
-        StyleLibrary.ConstraintSetup.setConstraint(forNextElement: companyNameLabel, from: positionLabel)
-        StyleLibrary.ConstraintSetup.setConstraint(forNextElement: dateLabel, from: companyNameLabel)
-        StyleLibrary.ConstraintSetup.setConstraint(forNextElement: responsibilityView, from: dateLabel)
-        StyleLibrary.ConstraintSetup.setConstraint(forBottomElement: responsibilityView, fromContentView: self.contentView)
+        ConstraintSetupHelper.setConstraint(forTopElement: positionLabel, withContainerView: self.contentView, topSpacing: StyleLibrary.Spacing.s10)
+        let spacingValues = SpacingValues(sideSpacing: nil, topSpacing: StyleLibrary.Spacing.s4, bottomSpacing: nil)
+        ConstraintSetupHelper.setConstraint(forElement: companyNameLabel, withOtherElement: positionLabel, spacingValues: spacingValues)
+        ConstraintSetupHelper.setConstraint(forElement: dateLabel, withOtherElement: companyNameLabel, spacingValues: spacingValues)
+        ConstraintSetupHelper.setConstraint(forElement: responsibilityView, withOtherElement: dateLabel, spacingValues: spacingValues)
+        ConstraintSetupHelper.setConstraint(forElement: responsibilityView, withOtherElement: self.contentView, spacingValues: SpacingValues(sideSpacing: .zero, topSpacing: nil, bottomSpacing: StyleLibrary.Spacing.s20))
     }
     
     func add(responsibilities: [String]){
@@ -45,24 +46,23 @@ class ExperienceCell: UITableViewCell {
             label.text = responsibility
             return label
         }
-        
+
         var previousLabel = UILabel()
         previousLabel.text = "Responsibilities:"
         previousLabel.font = StyleLibrary.FontStyle.caption1
         responsibilityView.addSubview(previousLabel)
-        StyleLibrary.ConstraintSetup.setConstraint(forTitleLabel: previousLabel, fromContentView: responsibilityView)
-        StyleLibrary.ConstraintSetup.setConstraint(forLabel: previousLabel, fromContainer: responsibilityView, sideSpacing: .zero, topSpacing: .zero)
+        ConstraintSetupHelper.setConstraint(forTopElement: previousLabel, withContainerView: responsibilityView, topSpacing: StyleLibrary.Spacing.s10)
         
         labels.forEach {
             responsibilityView.addSubview($0)
-            StyleLibrary.ConstraintSetup.setConstraint(forNextElement: $0, withWithElementOnTop: previousLabel)
+            ConstraintSetupHelper.setConstraint(forElement: $0, withOtherElement: previousLabel, spacingValues: SpacingValues(sideSpacing: .zero, topSpacing: StyleLibrary.Spacing.s4, bottomSpacing: nil))
             previousLabel = $0
         }
-        
+
         if let lastLabel = labels.last {
             lastLabel.bottomAnchor.constraint(equalTo: responsibilityView.bottomAnchor).isActive = true
         }
-        
+
         self.contentView.layoutIfNeeded()
     }
 }

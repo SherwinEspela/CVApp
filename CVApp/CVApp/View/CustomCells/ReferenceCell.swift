@@ -30,10 +30,11 @@ class ReferenceCell: UITableViewCell {
     }
     
     private func setupUIConstraints() {
-        StyleLibrary.ConstraintSetup.setConstraint(forTitleLabel: nameLabel, fromContentView: self.contentView)
-        StyleLibrary.ConstraintSetup.setConstraint(for: positionLabel, from: nameLabel)
-        StyleLibrary.ConstraintSetup.setConstraint(for: companyLabel, from: positionLabel)
-        StyleLibrary.ConstraintSetup.setConstraint(for: phoneLabel, from: companyLabel)
-        StyleLibrary.ConstraintSetup.setConstraint(forBottomLabel: phoneLabel, fromContentView: self.contentView)
+        ConstraintSetupHelper.setConstraint(forTopElement: nameLabel, withContainerView: self.contentView, topSpacing: StyleLibrary.Spacing.s10)
+        let spacing = SpacingValues(sideSpacing: nil, topSpacing: StyleLibrary.Spacing.s4, bottomSpacing: nil)
+        ConstraintSetupHelper.setConstraint(forElement: positionLabel, withOtherElement: nameLabel, spacingValues: spacing)
+        ConstraintSetupHelper.setConstraint(forElement: companyLabel, withOtherElement: positionLabel, spacingValues: spacing)
+        ConstraintSetupHelper.setConstraint(forElement: phoneLabel, withOtherElement: companyLabel, spacingValues: spacing)
+        ConstraintSetupHelper.setConstraint(forElement: phoneLabel, withOtherElement: self.contentView, spacingValues: SpacingValues(sideSpacing: StyleLibrary.Spacing.s20, topSpacing: nil, bottomSpacing: StyleLibrary.Spacing.s10))
     }
 }
