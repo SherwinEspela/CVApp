@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1E44269823581B1E00088F99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44269723581B1E00088F99 /* AppDelegate.swift */; };
-		1E44269A23581B1E00088F99 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44269923581B1E00088F99 /* SceneDelegate.swift */; };
 		1E44269F23581B1E00088F99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E44269D23581B1E00088F99 /* Main.storyboard */; };
 		1E4426A123581B1F00088F99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E4426A023581B1F00088F99 /* Assets.xcassets */; };
 		1E4426A423581B1F00088F99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E4426A223581B1F00088F99 /* LaunchScreen.storyboard */; };
@@ -54,7 +53,6 @@
 /* Begin PBXFileReference section */
 		1E44269423581B1E00088F99 /* CVApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CVApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E44269723581B1E00088F99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1E44269923581B1E00088F99 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1E44269E23581B1E00088F99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1E4426A023581B1F00088F99 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1E4426A323581B1F00088F99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -140,7 +138,6 @@
 				1E4426CD23584A6F00088F99 /* Services */,
 				1E4426E023598DBA00088F99 /* Constants */,
 				1E44269723581B1E00088F99 /* AppDelegate.swift */,
-				1E44269923581B1E00088F99 /* SceneDelegate.swift */,
 				1E4426A023581B1F00088F99 /* Assets.xcassets */,
 				1E4426A223581B1F00088F99 /* LaunchScreen.storyboard */,
 				1E4426A523581B1F00088F99 /* Info.plist */,
@@ -381,7 +378,6 @@
 				1E4426D923595EC800088F99 /* cv.swift in Sources */,
 				1E4426FF235BDB3300088F99 /* ExperienceCell.swift in Sources */,
 				1E4426DD235986DA00088F99 /* CVDataParser.swift in Sources */,
-				1E44269A23581B1E00088F99 /* SceneDelegate.swift in Sources */,
 				1E4426E623599AF800088F99 /* DetailsViewModel.swift in Sources */,
 				1E442704235C29AD00088F99 /* ConstraintSetupHelper.swift in Sources */,
 				1E4426DB23596A8700088F99 /* MainViewController.swift in Sources */,
@@ -562,6 +558,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D35XBC528F;
 				INFOPLIST_FILE = CVApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -580,6 +577,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D35XBC528F;
 				INFOPLIST_FILE = CVApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

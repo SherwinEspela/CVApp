@@ -32,6 +32,7 @@ class DetailsViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.allowsSelection = false
+        setupConstraint()
     }
     
     private func setupConstraint() {

@@ -34,7 +34,7 @@ class ExperienceCell: UITableViewCell {
         ConstraintSetupHelper.setConstraint(forElement: companyNameLabel, withOtherElement: positionLabel, spacingValues: spacingValues)
         ConstraintSetupHelper.setConstraint(forElement: dateLabel, withOtherElement: companyNameLabel, spacingValues: spacingValues)
         ConstraintSetupHelper.setConstraint(forElement: responsibilityView, withOtherElement: dateLabel, spacingValues: spacingValues)
-        ConstraintSetupHelper.setConstraint(forElement: responsibilityView, withOtherElement: self.contentView, spacingValues: SpacingValues(sideSpacing: .zero, topSpacing: nil, bottomSpacing: StyleLibrary.Spacing.s20))
+        ConstraintSetupHelper.setConstraint(forElement: responsibilityView, withOtherElement: self.contentView, spacingValues: SpacingValues(sideSpacing: 0, topSpacing: nil, bottomSpacing: StyleLibrary.Spacing.s20))
     }
     
     func add(responsibilities: [String]){
@@ -54,7 +54,7 @@ class ExperienceCell: UITableViewCell {
         
         labels.forEach {
             responsibilityView.addSubview($0)
-            ConstraintSetupHelper.setConstraint(forElement: $0, withOtherElement: previousLabel, spacingValues: SpacingValues(sideSpacing: .zero, topSpacing: StyleLibrary.Spacing.s4, bottomSpacing: nil))
+            ConstraintSetupHelper.setConstraint(forElement: $0, withOtherElement: previousLabel, spacingValues: SpacingValues(sideSpacing: 0, topSpacing: StyleLibrary.Spacing.s4, bottomSpacing: nil))
             previousLabel = $0
         }
 

@@ -59,13 +59,13 @@ class MainViewController: UIViewController {
         addressLabel.numberOfLines = 0
         summaryLabel.numberOfLines = 0
     
-        artBackgroundView.backgroundColor = .systemBlue
+        artBackgroundView.backgroundColor = .blue
         
         profileImageView.layer.cornerRadius = MainViewControllerConstants.profileImageWidth / 2
         profileImageView.layer.borderWidth = 3
         profileImageView.layer.borderColor = UIColor.white.cgColor
         
-        basicInfoView.backgroundColor = .systemGray5
+        basicInfoView.backgroundColor = .lightGray
     }
     
     private func fetchCVData() {
