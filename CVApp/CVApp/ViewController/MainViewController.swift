@@ -132,8 +132,12 @@ class MainViewController: UIViewController {
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let index = tableView.indexPathForSelectedRow?.row else { return }
-        if let detailsVC = segue.destination as? DetailsViewController, let title = cvHeaders?[index] {
+        
+        guard let indexPath = tableView.indexPathForSelectedRow else { return }
+        let selectedCell = tableView.cellForRow(at: indexPath)
+        selectedCell?.isSelected = false
+        
+        if let detailsVC = segue.destination as? DetailsViewController, let title = cvHeaders?[indexPath.row] {
             detailsVC.navigationItem.title = title
             detailsVC.detailsVM.cv = mainVM?.cv
         }
@@ -159,6 +163,7 @@ extension MainViewController: UITableViewDataSource {
         let cell = UITableViewCell()
         if let header = cvHeaders?[indexPath.row] {
             cell.textLabel?.text = header
+            cell.accessoryType = .disclosureIndicator
         }
         
         return cell
