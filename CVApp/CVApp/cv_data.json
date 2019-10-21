@@ -9,14 +9,14 @@
     "basicInformation": {
         "name": "Jerry Alvarez",
         "address": "94391 Karianne Passage Detroit MI",
-        "phone": "+1 (555) 529 5878",
+        "phone": "+1 (555) 527 5879",
         "summary": "Skilled and efficient iOS Developer with 3 years of experience creating unique and modern applications available in the App Store."
     },
     "experience": [
         {
             "position": "Senior iOS Developer",
-            "companyName": "Audible",
-            "location": "Newark, NJ",
+            "companyName": "Starks Industries",
+            "location": "Manhattan, NY",
             "startDate": "10/2016",
             "endDate": "present",
             "responsibilities": [
@@ -31,7 +31,7 @@
         },
         {
             "position": "Lead iOS Developer",
-            "companyName": "Facebook",
+            "companyName": "FaceSwapper Inc.",
             "location": "Boston, MA",
             "startDate": "05/2010",
             "endDate": "06/2016",
@@ -47,7 +47,7 @@
         },
         {
             "position": "iOS Developer",
-            "companyName": "Alphine Building Maintenance",
+            "companyName": "Alphine Delta Summit Software",
             "location": "Delta, BC",
             "startDate": "06/2007",
             "endDate": "03/2010",
@@ -97,26 +97,33 @@
         "English",
         "French",
         "Filipino",
-        "Japanese"
+        "Japanese",
+        "Korean"
     ],
     "references": [
         {
-            "name": "Michael Woods",
-            "company": "Atimi Software",
+            "name": "Danny Trovinski",
+            "company": "Walnut Interactive",
             "position": "Vice President of Software Development",
-            "phone": "778-995-8592"
+            "phone": "779-123-3345"
         },
         {
-            "name": "Terrence Geernaert",
-            "company": "Atimi Software",
+            "name": "Alex Parker",
+            "company": "Pure Sweetness Software",
             "position": "Executive Vice President of Software Development",
-            "phone": "778-372-2806"
+            "phone": "720-344-2901"
         },
         {
-            "name": "Paul Fieber",
-            "company": "Atimi Software",
+            "name": "Sammy Smith",
+            "company": "Mega Scanner Inc",
             "position": "IT Director",
-            "phone": "778-229-0023"
+            "phone": "728-239-0120"
+        },
+        {
+            "name": "Barry Spielberg",
+            "company": "Dreamerworld Games",
+            "position": "Senior Game Developer",
+            "phone": "764-983-7437"
         }
     ]
 }
