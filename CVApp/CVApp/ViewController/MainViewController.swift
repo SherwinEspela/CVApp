@@ -70,23 +70,14 @@ class MainViewController: UIViewController {
     
     private func fetchCVData() {
         mainVM = MainViewModel()
-        
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             guard let self = self else { return }
-            guard let path = Bundle.main.path(forResource: "cv_data", ofType: "json") else {
-                return
-            }
-            let url = URL(fileURLWithPath: path)
-            
-            do {
-                let data = try Data(contentsOf: url, options: .mappedIfSafe)
-                self.mainVM?.getCVHeaders(fromJsonData: data, with: { (cvHeaders, error) in
-                    if let _ = error { return }
-                    self.cvHeaders = cvHeaders
-                })
-            } catch {
-                fatalError()
-            }
+            self.mainVM?.getCVHeaders(completionHandler: { (headers, error) in
+                if let _ = error {
+                    return
+                }
+                self.cvHeaders = headers
+            })
         }
     }
     

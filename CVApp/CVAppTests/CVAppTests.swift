@@ -22,9 +22,9 @@ class CVAppTests: XCTestCase {
     func testMissingJsonData()
     {
         let mainVM = MainViewModel()
-        mainVM.getCVHeaders(fromJsonData: nil) { (headers, error) in
+        mainVM.getCVData(fromJsonData: nil) { (cv, error) in
             if let error = error {
-                XCTAssertEqual(error, CVDataParserError.MissingJsonData)
+                XCTAssertEqual(error, CVDataParserError.MissingJsonFile)
             }
         }
     }
@@ -44,7 +44,7 @@ class CVAppTests: XCTestCase {
         }
     
         let mainVM = MainViewModel()
-        mainVM.getCVHeaders(fromJsonData: jsonData) { (headers, error) in
+        mainVM.getCVData(fromJsonData: jsonData) { (cv, error) in
             if let error = error {
                 XCTAssertEqual(error, CVDataParserError.ParsingFailed)
             }
@@ -183,11 +183,11 @@ class CVAppTests: XCTestCase {
             }
         
             let mainVM = MainViewModel()
-            mainVM.getCVHeaders(fromJsonData: jsonData) { (headers, error) in
+            mainVM.getCVData(fromJsonData: jsonData) { (cv, error) in
                 XCTAssertNil(error)
-                XCTAssertNotNil(headers)
-                XCTAssertNotNil(mainVM.cv)
-                XCTAssertEqual(mainVM.cv?.basicInformation?.name, "Jerry Alvarez")
+                XCTAssertNotNil(cv)
+                XCTAssertNotNil(cv?.headers)
+                XCTAssertEqual(cv?.basicInformation?.name, "Jerry Alvarez")
             }
     }
 }

@@ -12,7 +12,6 @@
 		1E4426A123581B1F00088F99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E4426A023581B1F00088F99 /* Assets.xcassets */; };
 		1E4426A423581B1F00088F99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E4426A223581B1F00088F99 /* LaunchScreen.storyboard */; };
 		1E4426AF23581B2000088F99 /* CVAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4426AE23581B2000088F99 /* CVAppTests.swift */; };
-		1E4426BA23581B2000088F99 /* CVAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4426B923581B2000088F99 /* CVAppUITests.swift */; };
 		1E4426CC23583EB300088F99 /* cv_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 1E4426CB23583EB300088F99 /* cv_data.json */; };
 		1E4426D12358534100088F99 /* Reference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4426D02358534100088F99 /* Reference.swift */; };
 		1E4426D523595DC900088F99 /* Education.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4426D423595DC900088F99 /* Education.swift */; };
@@ -61,8 +60,6 @@
 		1E4426AE23581B2000088F99 /* CVAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVAppTests.swift; sourceTree = "<group>"; };
 		1E4426B023581B2000088F99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E4426B523581B2000088F99 /* CVAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CVAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1E4426B923581B2000088F99 /* CVAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVAppUITests.swift; sourceTree = "<group>"; };
-		1E4426BB23581B2000088F99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E4426CB23583EB300088F99 /* cv_data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cv_data.json; sourceTree = "<group>"; };
 		1E4426D02358534100088F99 /* Reference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reference.swift; sourceTree = "<group>"; };
 		1E4426D423595DC900088F99 /* Education.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Education.swift; sourceTree = "<group>"; };
@@ -113,7 +110,6 @@
 			children = (
 				1E44269623581B1E00088F99 /* CVApp */,
 				1E4426AD23581B2000088F99 /* CVAppTests */,
-				1E4426B823581B2000088F99 /* CVAppUITests */,
 				1E44269523581B1E00088F99 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -153,15 +149,6 @@
 				1E4426B023581B2000088F99 /* Info.plist */,
 			);
 			path = CVAppTests;
-			sourceTree = "<group>";
-		};
-		1E4426B823581B2000088F99 /* CVAppUITests */ = {
-			isa = PBXGroup;
-			children = (
-				1E4426B923581B2000088F99 /* CVAppUITests.swift */,
-				1E4426BB23581B2000088F99 /* Info.plist */,
-			);
-			path = CVAppUITests;
 			sourceTree = "<group>";
 		};
 		1E4426C723583B4D00088F99 /* View */ = {
@@ -398,7 +385,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E4426BA23581B2000088F99 /* CVAppUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,7 +473,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -541,7 +527,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -597,7 +583,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D35XBC528F;
 				INFOPLIST_FILE = CVAppTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -619,7 +605,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D35XBC528F;
 				INFOPLIST_FILE = CVAppTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -640,6 +626,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D35XBC528F;
 				INFOPLIST_FILE = CVAppUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -660,6 +647,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D35XBC528F;
 				INFOPLIST_FILE = CVAppUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
