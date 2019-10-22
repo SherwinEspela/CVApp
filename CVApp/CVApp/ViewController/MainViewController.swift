@@ -45,6 +45,7 @@ class MainViewController: UIViewController {
         tableView.dataSource = self
         setupUI()
         setupUIConstraints()
+        registerCell()
         
         mainVM = MainViewModel()
         mainVM?.delegate = self
@@ -58,17 +59,23 @@ class MainViewController: UIViewController {
         summaryLabel.font = StyleLibrary.FontStyle.paragraph
         
         nameLabel.textAlignment = .center
+        summaryLabel.textAlignment = .justified
         
         addressLabel.numberOfLines = 0
         summaryLabel.numberOfLines = 0
-    
-        artBackgroundView.backgroundColor = .blue
         
         profileImageView.layer.cornerRadius = MainViewControllerConstants.profileImageWidth / 2
         profileImageView.layer.borderWidth = 3
         profileImageView.layer.borderColor = UIColor.white.cgColor
         
-        basicInfoView.backgroundColor = .lightGray
+        basicInfoView.backgroundColor = StyleLibrary.Color.mainBasicInfoBG
+        
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [StyleLibrary.Color.lightBlue.cgColor, StyleLibrary.Color.darkBlue.cgColor]
+        gradientLayer.frame = artBackgroundView.frame
+        artBackgroundView.layer.insertSublayer(gradientLayer, at:0)
+        
+        tableView.separatorColor = .clear
     }
     
     private func setupUIConstraints() {
@@ -103,7 +110,7 @@ class MainViewController: UIViewController {
             summaryLabel.trailingAnchor.constraint(equalTo: nameLabel.trailingAnchor),
             
             // for address
-            addressLabel.topAnchor.constraint(equalTo: summaryLabel.bottomAnchor, constant: 20),
+            addressLabel.topAnchor.constraint(equalTo: summaryLabel.bottomAnchor, constant: 10),
             addressLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
             addressLabel.trailingAnchor.constraint(equalTo: nameLabel.trailingAnchor),
             
@@ -113,11 +120,15 @@ class MainViewController: UIViewController {
             phoneNumberLabel.trailingAnchor.constraint(equalTo: nameLabel.trailingAnchor),
             phoneNumberLabel.bottomAnchor.constraint(equalTo: basicInfoView.bottomAnchor, constant: -10),
             
-            // for cvSummaryTableView
-            tableView.topAnchor.constraint(equalTo: basicInfoView.bottomAnchor),
+            // for tableView
+            tableView.topAnchor.constraint(equalTo: basicInfoView.bottomAnchor, constant: 6),
             tableView.widthAnchor.constraint(equalToConstant: self.view.frame.size.width),
             tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
         ])
+    }
+    
+    private func registerCell() {
+        tableView.register(UINib(nibName: "HeaderCell", bundle: nil), forCellReuseIdentifier: HeaderCell.cellIdentifier)
     }
     
     // MARK: - Navigation
@@ -140,6 +151,10 @@ extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: MainViewControllerConstants.segueIdentifier, sender: nil)
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
+    }
 }
 
 // MARK: - UITableViewDataSource methods
@@ -150,12 +165,8 @@ extension MainViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        if let header = cvHeaders?[indexPath.row] {
-            cell.textLabel?.text = header
-            cell.accessoryType = .disclosureIndicator
-        }
-        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: HeaderCell.cellIdentifier, for: indexPath) as? HeaderCell, let header = cvHeaders?[indexPath.row] else { fatalError() }
+        cell.headerLabel.text = header
         return cell
     }
 }

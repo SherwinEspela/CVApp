@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1E35331D235EA051004F029D /* invalid_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 1E35331C235EA051004F029D /* invalid_data.json */; };
+		1E353320235EAD93004F029D /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E35331E235EAD93004F029D /* HeaderCell.swift */; };
+		1E353321235EAD93004F029D /* HeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E35331F235EAD93004F029D /* HeaderCell.xib */; };
 		1E44269823581B1E00088F99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E44269723581B1E00088F99 /* AppDelegate.swift */; };
 		1E44269F23581B1E00088F99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E44269D23581B1E00088F99 /* Main.storyboard */; };
 		1E4426A123581B1F00088F99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E4426A023581B1F00088F99 /* Assets.xcassets */; };
@@ -52,6 +54,8 @@
 
 /* Begin PBXFileReference section */
 		1E35331C235EA051004F029D /* invalid_data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = invalid_data.json; sourceTree = "<group>"; };
+		1E35331E235EAD93004F029D /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
+		1E35331F235EAD93004F029D /* HeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCell.xib; sourceTree = "<group>"; };
 		1E44269423581B1E00088F99 /* CVApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CVApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E44269723581B1E00088F99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1E44269E23581B1E00088F99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -226,6 +230,8 @@
 				1E4426FA235BD31C00088F99 /* EducationCell.xib */,
 				1E4426FD235BDB3300088F99 /* ExperienceCell.swift */,
 				1E4426FE235BDB3300088F99 /* ExperienceCell.xib */,
+				1E35331E235EAD93004F029D /* HeaderCell.swift */,
+				1E35331F235EAD93004F029D /* HeaderCell.xib */,
 			);
 			path = CustomCells;
 			sourceTree = "<group>";
@@ -342,6 +348,7 @@
 				1E4426CC23583EB300088F99 /* cv_data.json in Resources */,
 				1E44269F23581B1E00088F99 /* Main.storyboard in Resources */,
 				1E4426FC235BD31D00088F99 /* EducationCell.xib in Resources */,
+				1E353321235EAD93004F029D /* HeaderCell.xib in Resources */,
 				1E4426EA235A1CC800088F99 /* ReferenceCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -371,6 +378,7 @@
 				1E4426E9235A1CC800088F99 /* ReferenceCell.swift in Sources */,
 				1E4426D523595DC900088F99 /* Education.swift in Sources */,
 				1E4426FB235BD31D00088F99 /* EducationCell.swift in Sources */,
+				1E353320235EAD93004F029D /* HeaderCell.swift in Sources */,
 				1E4426D723595E3F00088F99 /* Experience.swift in Sources */,
 				1E44269823581B1E00088F99 /* AppDelegate.swift in Sources */,
 				1E442702235BE34900088F99 /* StyleLibrary.swift in Sources */,
