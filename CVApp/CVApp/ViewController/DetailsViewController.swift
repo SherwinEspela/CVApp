@@ -30,8 +30,8 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
         registerCells()
         tableView.dataSource = self
-        tableView.delegate = self
         tableView.allowsSelection = false
+        tableView.rowHeight = UITableView.automaticDimension
         setupConstraint()
     }
     
@@ -50,12 +50,6 @@ class DetailsViewController: UIViewController {
         tableView.register(UINib(nibName: "ReferenceCell", bundle: nil), forCellReuseIdentifier: ReferenceCell.cellIdentifier)
         tableView.register(UINib(nibName: "EducationCell", bundle: nil), forCellReuseIdentifier: EducationCell.cellIdentifier)
         tableView.register(UINib(nibName: "ExperienceCell", bundle: nil), forCellReuseIdentifier: ExperienceCell.cellIdentifier)
-    }
-}
-
-extension DetailsViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return getCellHeight(with: self.navigationItem.title!)
     }
 }
 
@@ -121,22 +115,6 @@ extension DetailsViewController: UITableViewDataSource {
             return cell
         default:
             return UITableViewCell()
-        }
-    }
-    
-    private func getCellHeight(with pageTitle: String) -> CGFloat {
-        switch pageTitle {
-        case CVHeaderType.experience.rawValue:
-            guard let cell = experienceCell else { return 0 }
-            return cell.intrinsicContentSize.height
-        case CVHeaderType.education.rawValue:
-            guard let cell = educationCell else { return 0 }
-            return cell.intrinsicContentSize.height
-        case CVHeaderType.references.rawValue:
-            guard let cell = referenceCell else { return 0 }
-            return cell.intrinsicContentSize.height
-        default:
-            return 44
         }
     }
 }

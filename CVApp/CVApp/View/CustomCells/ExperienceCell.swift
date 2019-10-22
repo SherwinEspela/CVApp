@@ -33,8 +33,8 @@ class ExperienceCell: UITableViewCell {
         let spacingValues = SpacingValues(sideSpacing: nil, topSpacing: StyleLibrary.Spacing.s4, bottomSpacing: nil)
         ConstraintSetupHelper.setConstraint(forElement: companyNameLabel, withOtherElement: positionLabel, spacingValues: spacingValues)
         ConstraintSetupHelper.setConstraint(forElement: dateLabel, withOtherElement: companyNameLabel, spacingValues: spacingValues)
-        ConstraintSetupHelper.setConstraint(forElement: responsibilityView, withOtherElement: dateLabel, spacingValues: spacingValues)
         ConstraintSetupHelper.setConstraint(forElement: responsibilityView, withOtherElement: self.contentView, spacingValues: SpacingValues(sideSpacing: 0, topSpacing: nil, bottomSpacing: StyleLibrary.Spacing.s20))
+        responsibilityView.topAnchor.constraint(equalTo: dateLabel.bottomAnchor, constant: StyleLibrary.Spacing.s4).isActive = true
     }
     
     func add(responsibilities: [String]){
@@ -61,7 +61,5 @@ class ExperienceCell: UITableViewCell {
         if let lastLabel = labels.last {
             lastLabel.bottomAnchor.constraint(equalTo: responsibilityView.bottomAnchor).isActive = true
         }
-
-        self.contentView.layoutIfNeeded()
     }
 }
