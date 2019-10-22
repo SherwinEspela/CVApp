@@ -40,12 +40,15 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.delegate = self
         tableView.dataSource = self
-        
         setupUI()
         setupUIConstraints()
-        fetchCVData()
+        
+        mainVM = MainViewModel()
+        mainVM?.delegate = self
+        mainVM?.fetchCVData()
     }
     
     private func setupUI() {
@@ -66,19 +69,6 @@ class MainViewController: UIViewController {
         profileImageView.layer.borderColor = UIColor.white.cgColor
         
         basicInfoView.backgroundColor = .lightGray
-    }
-    
-    private func fetchCVData() {
-        mainVM = MainViewModel()
-        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-            guard let self = self else { return }
-            self.mainVM?.getCVHeaders(completionHandler: { (headers, error) in
-                if let _ = error {
-                    return
-                }
-                self.cvHeaders = headers
-            })
-        }
     }
     
     private func setupUIConstraints() {
@@ -167,5 +157,13 @@ extension MainViewController: UITableViewDataSource {
         }
         
         return cell
+    }
+}
+
+// MARK: - UITableViewDataSource methods
+extension MainViewController: MainViewModelDelegate {
+    
+    func mainViewModel(_ mainViewModel: MainViewModel, didFetchCV cv: CV) {
+        self.cvHeaders = cv.headers
     }
 }
